@@ -20,7 +20,7 @@ const useStyles = makeStyles(() =>
   })
 );
 
-export const WorkoutCard = (props: Props) => {
+export const DashboardAppbar = (props: Props) => {
   const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1 }}>
