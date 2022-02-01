@@ -19,7 +19,7 @@ const useStyles = makeStyles(() =>
     card: {
       width: 400, 
       marginTop: 50,
-    }
+    },
   })
 );
 
@@ -27,7 +27,7 @@ export const DayCard = () => {
   const classes = useStyles();
 
   return (
-    <Card className={classes.card}>
+    <Card variant="outlined" className={classes.card}>
       <CardMedia component="img" height="140" image={PushDayImage} />
       <CardContent className={classes.content}>
         <Typography gutterBottom variant="h5" component="div">
