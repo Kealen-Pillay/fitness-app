@@ -1,23 +1,28 @@
-import { createStyles } from "@mui/material";
+import { createStyles, Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import React, { useEffect } from "react";
 import { DashboardAppbar } from "./Components/DashboardAppbar";
 import { DayCard } from "./Components/DayCard";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: {
-      backgroundColor: "#1E1E1E",
+    gridLayout: {
+      justifyContent: "space-between",
     },
   })
 );
 
 export const Dashboard = () => {
   const classes = useStyles();
+
   return (
     <div>
       <DashboardAppbar />
-      <DayCard />
+      <Grid container>
+        <Grid item xs={4}>
+          <DayCard />
+        </Grid>
+      </Grid>
     </div>
   );
 };

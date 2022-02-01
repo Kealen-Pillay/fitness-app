@@ -1,28 +1,32 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { createStyles, makeStyles } from "@mui/styles";
 import React from "react";
+import PushDayImage from "../images/push-day.jpeg";
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      backgroundColor: "#1E1E1E",
+      color: "#FFFFFF",
+    },
+  })
+);
 
 export const DayCard = () => {
+  const classes = useStyles();
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card variant="outlined" sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
+        image={PushDayImage}
       />
-      <CardContent>
+      <CardContent className={classes.root}>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          Push Day
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 };
