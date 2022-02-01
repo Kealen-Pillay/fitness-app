@@ -2,6 +2,7 @@ import {
   AppBar,
   Box,
   Button,
+  Grid,
   IconButton,
   Toolbar,
   Typography,
@@ -26,19 +27,13 @@ export const DashboardAppbar = (props: Props) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Home
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Grid container justifyContent="center">
+            <Grid item>
+              <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                Fitness Dashboard
+              </Typography>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </Box>
