@@ -12,10 +12,13 @@ import PushDayImage from "../images/push-day.jpeg";
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: {
+    content: {
       backgroundColor: "#1E1E1E",
       color: "#FFFFFF",
     },
+    card: {
+      width: 400, 
+    }
   })
 );
 
@@ -23,9 +26,9 @@ export const DayCard = () => {
   const classes = useStyles();
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={classes.card}>
       <CardMedia component="img" height="140" image={PushDayImage} />
-      <CardContent className={classes.root}>
+      <CardContent className={classes.content}>
         <Typography gutterBottom variant="h5" component="div">
           Push Day
         </Typography>
