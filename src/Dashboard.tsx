@@ -17,6 +17,7 @@ export const Dashboard = () => {
         direction="row"
         justifyContent="space-around"
         alignItems="center"
+        height="100vh"
       >
         <Grid item>
           <DayCard />
