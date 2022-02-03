@@ -28,7 +28,7 @@ export const DashboardAppbar = (props: Props) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <Grid container justifyContent="center">
+          <Grid direction="row" container justifyContent="center" alignItems="center">
             <Grid item>
               <Typography variant="h4" component="div">
                 Fitness Dashboard
