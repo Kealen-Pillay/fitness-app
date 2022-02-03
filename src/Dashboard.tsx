@@ -6,6 +6,21 @@ import { DayCard } from "./Components/DayCard";
 
 const useStyles = makeStyles(() => createStyles({}));
 
+const workouts = [
+  {
+    name: "push",
+    url: "url",
+  },
+  {
+    name: "pull",
+    url: "url",
+  },
+  {
+    name: "legs",
+    url: "url",
+  },
+];
+
 export const Dashboard = () => {
   const classes = useStyles();
 
@@ -19,7 +34,14 @@ export const Dashboard = () => {
         alignItems="center"
         height="100vh"
       >
-        <Grid item>
+        {workouts.map((workout) => {
+          return (
+            <Grid item>
+              <DayCard day={workout.name} url={workout.url} />
+            </Grid>
+          );
+        })}
+        {/* <Grid item>
           <DayCard />
         </Grid>
         <Grid item>
@@ -27,7 +49,7 @@ export const Dashboard = () => {
         </Grid>
         <Grid item>
           <DayCard />
-        </Grid>
+        </Grid> */}
       </Grid>
     </div>
   );

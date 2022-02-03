@@ -22,7 +22,12 @@ const useStyles = makeStyles(() =>
   })
 );
 
-export const DayCard = () => {
+interface Props {
+  day: string;
+  url: string;
+}
+
+export const DayCard = ({ day, url }: Props) => {
   const classes = useStyles();
 
   return (
@@ -30,7 +35,7 @@ export const DayCard = () => {
       <CardMedia component="img" height="140" image={PushDayImage} />
       <CardContent className={classes.content}>
         <Typography gutterBottom variant="h5" component="div">
-          Workout
+          {day}
         </Typography>
       </CardContent>
     </Card>
