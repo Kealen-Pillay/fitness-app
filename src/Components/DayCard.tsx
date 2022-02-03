@@ -5,7 +5,6 @@ import {
   Typography,
 } from "@mui/material";
 import { createStyles, makeStyles } from "@mui/styles";
-import PushDayImage from "../images/push-day.jpeg";
 import { AddWorkout } from "./AddWorkout";
 
 const useStyles = makeStyles(() =>
