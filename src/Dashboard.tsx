@@ -8,15 +8,15 @@ const useStyles = makeStyles(() => createStyles({}));
 
 const workouts = [
   {
-    name: "push",
+    name: "Push Day",
     url: "url",
   },
   {
-    name: "pull",
+    name: "Pull Day",
     url: "url",
   },
   {
-    name: "legs",
+    name: "Leg Day",
     url: "url",
   },
 ];
@@ -31,7 +31,6 @@ export const Dashboard = () => {
         container
         direction="row"
         justifyContent="space-around"
-        alignItems="center"
         height="100vh"
       >
         {workouts.map((workout) => {
