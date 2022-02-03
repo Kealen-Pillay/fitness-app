@@ -9,15 +9,15 @@ const useStyles = makeStyles(() => createStyles({}));
 const workouts = [
   {
     name: "Push Day",
-    url: "url",
+    url: "https://api.time.com/wp-content/uploads/2020/03/gym-coronavirus.jpg",
   },
   {
     name: "Pull Day",
-    url: "url",
+    url: "https://content.presspage.com/uploads/2110/1920_gym-covid-19-mask-risk-gettyimages.jpg?10000",
   },
   {
     name: "Leg Day",
-    url: "url",
+    url: "https://www.maximuscle.com/Images/Article/large/legs-workout.jpg",
   },
 ];
 
@@ -40,15 +40,6 @@ export const Dashboard = () => {
             </Grid>
           );
         })}
-        {/* <Grid item>
-          <DayCard />
-        </Grid>
-        <Grid item>
-          <DayCard />
-        </Grid>
-        <Grid item>
-          <DayCard />
-        </Grid> */}
       </Grid>
     </div>
   );

@@ -1,15 +1,11 @@
 import {
   AppBar,
   Box,
-  Button,
   Grid,
-  IconButton,
   Toolbar,
   Typography,
 } from "@mui/material";
 import { makeStyles, createStyles } from "@mui/styles";
-import MenuIcon from "@mui/icons-material/Menu";
-import React from "react";
 
 interface Props {}
 
@@ -31,7 +27,7 @@ export const DashboardAppbar = (props: Props) => {
           <Grid direction="row" container justifyContent="center" alignItems="center">
             <Grid item>
               <Typography variant="h4" component="div">
-                Fitness Dashboard
+                Fitness Planner
               </Typography>
             </Grid>
           </Grid>
