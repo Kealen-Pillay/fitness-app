@@ -38,6 +38,7 @@ export const AddWorkout = () => {
               size="small"
               value="Add Workout"
               className={classes.workoutField}
+              sx={{marginRight: 1}}
             />
             <TextField
               id="outlined-basic"
@@ -45,6 +46,7 @@ export const AddWorkout = () => {
               size="small"
               value="Reps"
               className={classes.repField}
+              sx={{marginRight: 1}}
             />
             <TextField
               id="outlined-basic"
@@ -52,6 +54,7 @@ export const AddWorkout = () => {
               size="small"
               value="Sets"
               className={classes.repField}
+              sx={{marginRight: 1}}
             />
             </Grid>
             <Grid item>
