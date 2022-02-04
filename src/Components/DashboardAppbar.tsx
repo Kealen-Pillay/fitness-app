@@ -25,7 +25,7 @@ export const DashboardAppbar = (props: Props) => {
         <Toolbar>
           <Grid direction="row" container justifyContent="center">
             <Grid item>
-              <Typography variant="h4">
+              <Typography variant="h4" sx={{marginTop: 2}}>
                 Fitness Planner
               </Typography>
             </Grid>
