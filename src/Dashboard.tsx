@@ -1,10 +1,6 @@
-import { createStyles, Grid } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-import React, { useEffect } from "react";
+import { Grid } from "@mui/material";
 import { DashboardAppbar } from "./Components/DashboardAppbar";
 import { DayCard } from "./Components/DayCard";
-
-const useStyles = makeStyles(() => createStyles({}));
 
 const workouts = [
   {
@@ -22,8 +18,6 @@ const workouts = [
 ];
 
 export const Dashboard = () => {
-  const classes = useStyles();
-
   return (
     <div>
       <DashboardAppbar />
