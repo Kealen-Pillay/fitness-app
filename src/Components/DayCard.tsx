@@ -82,6 +82,10 @@ export const DayCard = ({ day, url }: Props) => {
     }
   };
 
+  const deleteItem = (e: React.ChangeEvent<any>) => {
+    console.log(e.target.name);
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <Card
@@ -109,7 +113,7 @@ export const DayCard = ({ day, url }: Props) => {
                   >
                     <Grid item>
                       <Typography variant="h6">
-                        {item.workout}: {item.reps} Reps x {item.sets} Sets
+                        {item.workout}: {item.reps} x {item.sets}
                       </Typography>
                     </Grid>
                     <Grid item>
@@ -117,6 +121,7 @@ export const DayCard = ({ day, url }: Props) => {
                         sx={{ backgroundColor: "#eb675e" }}
                         size="small"
                         aria-label="delete"
+                        onClick={(e) => deleteItem(e)}
                       >
                         <DeleteIcon />
                       </Fab>
