@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardContent,
   CardMedia,
@@ -10,6 +11,8 @@ import {
 import { createStyles, makeStyles } from "@mui/styles";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { idText } from "typescript";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -41,7 +44,7 @@ const useStyles = makeStyles(() =>
     items: {
       marginTop: 10,
       marginBottom: 10,
-    }
+    },
   })
 );
 
@@ -77,7 +80,6 @@ export const DayCard = ({ day, url }: Props) => {
       setReps("Reps");
       setSets("Sets");
     }
-    
   };
 
   return (
@@ -95,15 +97,35 @@ export const DayCard = ({ day, url }: Props) => {
           <Typography gutterBottom variant="h5" component="div">
             {day}
           </Typography>
-          {items.map((item) => {return(
-            <Card className={classes.items}>
-              <CardContent>
-                <Typography>
-                  {item.workout}
-                </Typography>
-              </CardContent>
-            </Card>
-          )})}
+          {items.map((item) => {
+            return (
+              <Card className={classes.items}>
+                <CardContent>
+                  <Grid
+                    container
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Grid item>
+                      <Typography variant="h6">
+                        {item.workout}: {item.reps} Reps x {item.sets} Sets
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Fab
+                        sx={{ backgroundColor: "#eb675e" }}
+                        size="small"
+                        aria-label="delete"
+                      >
+                        <DeleteIcon />
+                      </Fab>
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            );
+          })}
           <Card className={classes.root}>
             <CardContent>
               <Grid container direction="row" justifyContent="space-between">
@@ -138,7 +160,7 @@ export const DayCard = ({ day, url }: Props) => {
                 </Grid>
                 <Grid item>
                   <Fab
-                    color="primary"
+                    sx={{ backgroundColor: "#eb675e" }}
                     size="small"
                     aria-label="add"
                     type="submit"
