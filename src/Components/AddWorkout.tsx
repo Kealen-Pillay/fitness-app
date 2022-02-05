@@ -1,6 +1,7 @@
 import { Card, CardContent, Fab, Grid, TextField } from "@mui/material";
 import { makeStyles, createStyles } from "@mui/styles";
 import AddIcon from "@mui/icons-material/Add";
+import { useState } from "react";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -26,9 +27,10 @@ const useStyles = makeStyles(() =>
 
 export const AddWorkout = () => {
   const classes = useStyles();
+
   return (
     <>
-      <Card className={classes.root}>
+      {/* <Card className={classes.root}>
         <CardContent>
           <Grid container direction="row" justifyContent="space-between">
             <Grid item>
@@ -58,13 +60,13 @@ export const AddWorkout = () => {
             />
             </Grid>
             <Grid item>
-            <Fab color="primary" size="small" aria-label="add">
+            <Fab color="primary" size="small" aria-label="add" >
               <AddIcon />
             </Fab>
             </Grid>
           </Grid>
         </CardContent>
-      </Card>
+      </Card> */}
     </>
   );
 };
