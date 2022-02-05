@@ -82,10 +82,6 @@ export const DayCard = ({ day, url }: Props) => {
     }
   };
 
-  const deleteItem = (e: React.ChangeEvent<any>) => {
-    console.log(e.target.name);
-  }
-
   return (
     <form onSubmit={handleSubmit}>
       <Card
@@ -121,7 +117,14 @@ export const DayCard = ({ day, url }: Props) => {
                         sx={{ backgroundColor: "#eb675e" }}
                         size="small"
                         aria-label="delete"
-                        onClick={(e) => deleteItem(e)}
+                        onClick={() =>
+                          setItems(() => {
+                            const newItems = items.filter(
+                              (element) => element.workout !== item.workout
+                            );
+                            return newItems;
+                          })
+                        }
                       >
                         <DeleteIcon />
                       </Fab>
