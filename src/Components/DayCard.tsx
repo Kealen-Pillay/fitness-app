@@ -38,6 +38,10 @@ const useStyles = makeStyles(() =>
     setField: {
       width: 90,
     },
+    items: {
+      marginTop: 10,
+      marginBottom: 10,
+    }
   })
 );
 
@@ -52,11 +56,28 @@ export const DayCard = ({ day, url }: Props) => {
   const [workout, setWorkout] = useState("Add Workout");
   const [reps, setReps] = useState("Reps");
   const [sets, setSets] = useState("Sets");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<
+    { workout: string; reps: string; sets: string }[]
+  >([]);
 
   const handleSubmit = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-    console.log("hello World");
+
+    const newWorkout = {
+      workout: workout,
+      reps: reps,
+      sets: sets,
+    };
+
+    if (workout && reps && sets) {
+      setItems((items) => {
+        return [...items, newWorkout];
+      });
+      setWorkout("Add Workout");
+      setReps("Reps");
+      setSets("Sets");
+    }
+    
   };
 
   return (
@@ -74,6 +95,15 @@ export const DayCard = ({ day, url }: Props) => {
           <Typography gutterBottom variant="h5" component="div">
             {day}
           </Typography>
+          {items.map((item) => {return(
+            <Card className={classes.items}>
+              <CardContent>
+                <Typography>
+                  {item.workout}
+                </Typography>
+              </CardContent>
+            </Card>
+          )})}
           <Card className={classes.root}>
             <CardContent>
               <Grid container direction="row" justifyContent="space-between">
