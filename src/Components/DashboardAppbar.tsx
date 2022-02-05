@@ -1,36 +1,31 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  Grid,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, Grid, Toolbar, Typography } from "@mui/material";
 import { makeStyles, createStyles } from "@mui/styles";
-import MenuIcon from "@mui/icons-material/Menu";
-import React from "react";
 
 interface Props {}
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: {
-      background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    appBar: {
+      height: 80,
     },
   })
 );
 
 export const DashboardAppbar = (props: Props) => {
   const classes = useStyles();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" className={classes.root}>
+      <AppBar
+        position="static"
+        className={classes.appBar}
+        sx={{ backgroundColor: "#eb675e" }}
+      >
         <Toolbar>
-          <Grid container justifyContent="center">
+          <Grid direction="row" container justifyContent="center">
             <Grid item>
-              <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                Fitness Dashboard
+              <Typography variant="h4" sx={{ marginTop: 2 }}>
+                Fitness Planner
               </Typography>
             </Grid>
           </Grid>
