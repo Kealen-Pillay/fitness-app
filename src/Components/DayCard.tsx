@@ -12,7 +12,6 @@ import { createStyles, makeStyles } from "@mui/styles";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { idText } from "typescript";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -117,14 +116,16 @@ export const DayCard = ({ day, url }: Props) => {
                         sx={{ backgroundColor: "#eb675e" }}
                         size="small"
                         aria-label="delete"
-                        onClick={() =>
-                          setItems(() => {
-                            const newItems = items.filter(
-                              (element) => element.workout !== item.workout
-                            );
-                            return newItems;
-                          })
-                        }
+                        onClick={() => {
+                          const newItems = items;
+                          for (var i = 0; i < newItems.length; i++) {
+                            if (newItems[i].workout === item.workout) {
+                              newItems.splice(i, 1);
+                              break;
+                            }
+                          }
+                          setItems([...newItems]);
+                        }}
                       >
                         <DeleteIcon />
                       </Fab>
