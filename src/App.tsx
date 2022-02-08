@@ -4,7 +4,7 @@ import { Dashboard } from "./Dashboard";
 function App() {
 
   return (
-    <div style={{ backgroundColor: "#1E1E1E" }}>
+    <div >
       <Dashboard />
     </div>
   );
