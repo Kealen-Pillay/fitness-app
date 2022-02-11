@@ -55,9 +55,9 @@ interface Props {
 export const DayCard = ({ day, url }: Props) => {
   const classes = useStyles();
 
-  const [workout, setWorkout] = useState("Add Workout");
-  const [reps, setReps] = useState("Reps");
-  const [sets, setSets] = useState("Sets");
+  const [workout, setWorkout] = useState("");
+  const [reps, setReps] = useState("");
+  const [sets, setSets] = useState("");
   const [items, setItems] = useState<
     { workout: string; reps: string; sets: string }[]
   >([]);
@@ -141,6 +141,7 @@ export const DayCard = ({ day, url }: Props) => {
                 <Grid item>
                   <TextField
                     id="outlined-basic"
+                    label="Workout"
                     variant="outlined"
                     size="small"
                     value={workout}
@@ -150,6 +151,7 @@ export const DayCard = ({ day, url }: Props) => {
                   />
                   <TextField
                     id="outlined-basic"
+                    label="Reps"
                     variant="outlined"
                     size="small"
                     value={reps}
@@ -159,6 +161,7 @@ export const DayCard = ({ day, url }: Props) => {
                   />
                   <TextField
                     id="outlined-basic"
+                    label="Sets"
                     variant="outlined"
                     size="small"
                     value={sets}
