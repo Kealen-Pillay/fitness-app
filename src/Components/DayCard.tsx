@@ -75,9 +75,9 @@ export const DayCard = ({ day, url }: Props) => {
       setItems((items) => {
         return [...items, newWorkout];
       });
-      setWorkout("Add Workout");
-      setReps("Reps");
-      setSets("Sets");
+      setWorkout("");
+      setReps("");
+      setSets("");
     }
   };
 
